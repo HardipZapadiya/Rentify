@@ -1,7 +1,11 @@
+ import React from 'react';
+ import Login from './pages/Login.jsx';
+ 
+ 
  function App() {
   return (
     <div className="App">
-      <h1>Welcome to the App!</h1>
+      <Login />
     </div>
   );
 }
