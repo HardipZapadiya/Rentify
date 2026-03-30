@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";   // import Link
 import styles from "./Login.module.css";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -12,8 +12,10 @@ const Login = () => {
 
   const validate = () => {
     let newErrors = {};
-    if (!formData.username.trim()) {
-      newErrors.username = "Username is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
     }
     if (!formData.password.trim()) {
       newErrors.password = "Password is required";
@@ -42,16 +44,16 @@ const Login = () => {
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.label}>
-          USERNAME
+          EMAIL
           <input
-            type="text"
-            name="username"
-            placeholder="Enter username"
-            value={formData.username}
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            value={formData.email}
             onChange={handleChange}
             className={styles.input}
           />
-          {errors.username && <span className={styles.error}>{errors.username}</span>}
+          {errors.email && <span className={styles.error}>{errors.email}</span>}
         </label>
 
         <label className={styles.label}>

@@ -1,0 +1,108 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  font-family: 'Inter', sans-serif;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoIcon {
+  height: 32px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 800;
+  color: #090a0c;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #1a73e8;
+}
+
+.actionContainer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.loginBtn {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.loginBtn:hover {
+  color: #1a73e8;
+}
+
+.registerBtn {
+  text-decoration: none;
+  color: #1a73e8;
+  border: 2px solid #1a73e8;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.registerBtn:hover {
+  background-color: #1a73e8;
+  color: #ffffff;
+}
+
+/* Logged-in specific styles */
+.profileLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profileLink:hover {
+  color: #1a73e8;
+}
+
+.profileIcon {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 24px;
+  }
+
+  .navLinks {
+    display: none;
+    /* simple mobile fallback */
+  }
+}

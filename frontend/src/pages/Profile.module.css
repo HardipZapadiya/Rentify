@@ -1,0 +1,437 @@
+.profileContainer {
+  display: flex;
+  gap: 24px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  /* Setup font, assuming it's available or default */
+  background-color: #f7f9fc;
+  min-height: calc(100vh - 80px);
+  /* Adjust based on navbar height */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 280px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #202124;
+  margin: 0 0 4px 0;
+}
+
+.userMemberSince {
+  font-size: 13px;
+  color: #80868b;
+  margin: 0;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #5f6368;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  font-size: 15px;
+}
+
+.navItem:hover {
+  background-color: #f1f3f4;
+}
+
+.navItem.active {
+  background-color: #1a73e8;
+  color: #ffffff;
+}
+
+.navItem span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  background-color: #ea4335;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.logoutBtn {
+  margin-top: 32px;
+  color: #d93025;
+}
+
+.logoutBtn:hover {
+  background-color: #fce8e6;
+}
+
+
+/* Main Content Styles */
+.contentArea {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #202124;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+/* Form Styles */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5f6368;
+}
+
+.inputField {
+  padding: 12px 16px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #202124;
+  transition: border-color 0.2s;
+  background-color: #ffffff;
+  font-family: inherit;
+}
+
+.inputField::placeholder {
+  color: #9aa0a6;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.inputError {
+  border-color: #ea4335;
+}
+
+.errorText {
+  color: #ea4335;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.saveBtn {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 16px;
+}
+
+.saveBtn:hover {
+  background-color: #1557b0;
+}
+
+
+/* Bookings Styles */
+.tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #e8eaed;
+  margin-bottom: 32px;
+}
+
+.tab {
+  padding: 12px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #5f6368;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+}
+
+.tab.activeTab {
+  color: #1a73e8;
+}
+
+.tab.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #1a73e8;
+}
+
+.bookingCard {
+  border: 1px solid #e8eaed;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.bookingCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.bookingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.carName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #202124;
+  margin: 0 0 4px 0;
+}
+
+.bookingId {
+  font-size: 13px;
+  color: #80868b;
+  margin: 0;
+}
+
+.statusBadge {
+  background-color: #fbbc04;
+  color: #805b00;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.bookingDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.detailCol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailCol.rightAlign {
+  align-items: flex-end;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #80868b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0;
+}
+
+.priceValue {
+  font-size: 18px;
+  color: #1a73e8;
+}
+
+
+/* Notifications Styles */
+.notificationsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.markRead {
+  color: #1a73e8;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.markRead:hover {
+  text-decoration: underline;
+}
+
+.notificationList {
+  display: flex;
+  flex-direction: column;
+}
+
+.notificationItem {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.notifIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.iconSuccess {
+  background-color: #e6f4ea;
+  color: #34a853;
+}
+
+.iconPromo {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+.iconInfo {
+  background-color: #f1f3f4;
+  color: #5f6368;
+}
+
+.notifContent {
+  flex: 1;
+}
+
+.notifTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0 0 4px 0;
+}
+
+.notifText {
+  font-size: 14px;
+  color: #5f6368;
+  margin: 0;
+}
+
+.notifTime {
+  font-size: 12px;
+  color: #9aa0a6;
+  white-space: nowrap;
+}
+
+.promoCode {
+  color: #1a73e8;
+  font-weight: 600;
+  background-color: #e8f0fe;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profileContainer {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .sidebar {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookingDetails {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .detailCol.rightAlign {
+    align-items: flex-start;
+    grid-column: 1 / -1;
+  }
+}
