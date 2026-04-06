@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";   // import Link
 import styles from "./Login.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,6 +36,11 @@ const Login = () => {
     } else {
       setErrors({});
       alert("Login successful (demo)!");
+      
+
+      // Simulate successful login and redirect to home page
+      navigate("/");
+      setIsLoggedIn(!isLoggedIn)
       // Add backend integration here
     }
   };
