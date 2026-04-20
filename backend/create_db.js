@@ -10,6 +10,8 @@ const createDB = async () => {
   });
 
   try {
+    // Connect to the default 'postgres' database to create the new database
+    // Note: You cannot connect to a database that doesn't exist yet, so we connect to 'postgres' first
     await client.connect();
     await client.query('CREATE DATABASE rentify');
     console.log('Database "rentify" created successfully');
